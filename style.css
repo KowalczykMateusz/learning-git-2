@@ -1,0 +1,17 @@
+.container {
+	max-width: 800px;
+	padding: 20px;
+	margin: 0 auto;
+}
+
+.song {
+	text-align: center;
+}
+
+h1 {
+	color: blue;
+}
+
+h2 {
+	color: yellow;
+}
