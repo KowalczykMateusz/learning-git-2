@@ -1,10 +1,20 @@
 {
-  "name": "Zadanie-1-4",
+  "name": "zadanie-1-4",
   "version": "1.0.0",
-  "description": "",
+  "description": "https://kowalczykmateusz.github.io/learning-git-2/",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run test:html",
+    "test:html": "globstar nu-html-checker *.html",
+    "init-project": "npm install && npm-run-all init:*",
+    "init:dirs": "mkdirp sass css vendor images js",
+    "init:files": "touch README.md index.html sass/style.scss js/script.js",
+    "init:gitignore": "curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore",
+    "watch": "npm-run-all watch:*",
+    "watch:browsersync": "node_modules/.bin/browser-sync start --server --files css/*.css *.html",
+    "watch:sassprefixer": "onchange node-sass --output-style expanded --source-map true -o css sass && onchange -d 100 css/style.css -- autoprefixer-cli -o css/style.prefixed.css css/style.css",
+    "build:clean": "rm -rf css",
+    "build:sass": "node-sass --output-style compact -o css sass"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +22,19 @@
   "devDependencies": {
     "autoprefixer-cli": "^1.0.0",
     "browser-sync": "^2.24.4",
-    "nu-html-checker": "^0.1.0"
+    "globstar": "^1.0.0",
+    "nu-html-checker": "^0.1.0",
+    "onchange": "^4.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KowalczykMateusz/learning-git-2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/KowalczykMateusz/learning-git-2/issues"
+  },
+  "homepage": "https://github.com/KowalczykMateusz/learning-git-2#readme",
+  "dependencies": {
+    "rimraf": "^2.6.2"
   }
 }

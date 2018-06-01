@@ -1,3 +1,5 @@
+display: flex
+
 .container {
 	max-width: 800px;
 	padding: 20px;
@@ -9,9 +11,10 @@
 }
 
 h1 {
-	color: blue;
+	color: green;
 }
 
 h2 {
 	color: yellow;
 }
+
